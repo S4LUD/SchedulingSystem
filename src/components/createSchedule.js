@@ -20,7 +20,6 @@ const CreateSchedule = () => {
   const [isErrorDescription, setErrorDescription] = useState("");
   const [isError, setError] = useState("");
   const [isErrorVisible, setErrorVisible] = useState(false);
-  const [isSelect, setSelected] = useState("");
   const [isSelectSection, setSelectSection] = useState("");
   const [isSelectedRoom, setSelectedRoom] = useState("");
   const [isSelectedDay, setSelectedDay] = useState("");
@@ -28,9 +27,6 @@ const CreateSchedule = () => {
   const [isSelectedSubject, setSelectedSubject] = useState("");
   const [isSelectedInstructor, setSelectedInstructor] = useState("");
   const [isSelectedCourse, setSelectedCourse] = useState("");
-  const [isSelectedSection, setSelectedSection] = useState("");
-  const [isSelectSubject, setSelectSubject] = useState("");
-  const [isSelectInstructor, setSelectInstructor] = useState("");
 
   const RoomAPI = `${Api.api}/api/room`;
   const SubjectAPI = `${Api.api}/api/subject`;
@@ -115,22 +111,22 @@ const CreateSchedule = () => {
   }, [RoomAPI, CourseAPI, SubjectAPI, InstructorAPI]);
 
   const HandleSelected = (data) => {
+    setSelectSection("");
+
     if (data === "Select")
       return (
         setDisabled(true),
-        setSelected(""),
+        setSelectedCourse(""),
         setSection([]),
         setBotDisabled(true),
         setSchedule([])
       );
     setDisabled(false);
-    setSelected(data);
+    setSelectedCourse(data);
     HandleGetSections(data);
   };
 
   const HandleGetSections = async (data) => {
-    setSelectSection("");
-
     const SearchCourseRequest = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -171,18 +167,15 @@ const CreateSchedule = () => {
 
   const HandleSaveSchedule = async () => {
     setLoading(true);
+
     const raw = JSON.stringify({
       course: isSelectedCourse,
-      section: isSelectedSection,
-      course_id: isSelect,
-      section_id: isSelectSection,
+      section: isSelectSection,
       room: isSelectedRoom,
       day: isSelectedDay,
       timeslot: isSelectedTimeslot,
       subject: isSelectedSubject,
       instructor: isSelectedInstructor,
-      subject_id: isSelectSubject,
-      instructor_id: isSelectInstructor,
     });
 
     const ScheduleRequest = {
@@ -206,22 +199,6 @@ const CreateSchedule = () => {
         setLoading(false);
       })
       .catch((error) => console.log(error));
-  };
-
-  const HandleGetSection = (data) => {
-    setSelectedSection(data);
-  };
-
-  const HandleGetCourse = (data) => {
-    setSelectedCourse(data);
-  };
-
-  const HandleGetSubject = (data) => {
-    setSelectSubject(data);
-  };
-
-  const HandleGetInstructor = (data) => {
-    setSelectInstructor(data);
   };
 
   const HandleDeleteSchedule = (data) => {
@@ -308,17 +285,13 @@ const CreateSchedule = () => {
                     <div className="input-title">Course</div>
                     <div className="custom-select">
                       <select
-                        value={isSelect}
+                        value={isSelectedCourse}
                         onChange={(data) => HandleSelected(data.target.value)}
                       >
                         <option>Select</option>
                         {isCourse.map((data) => {
                           return (
-                            <option
-                              key={data._id}
-                              onClick={() => HandleGetCourse(data.course)}
-                              value={data._id}
-                            >
+                            <option key={data._id} value={data.course}>
                               {data.course}
                             </option>
                           );
@@ -343,11 +316,7 @@ const CreateSchedule = () => {
                         <option>Select</option>
                         {isSection.map((data) => {
                           return (
-                            <option
-                              key={data._id}
-                              onClick={() => HandleGetSection(data.section)}
-                              value={data._id}
-                            >
+                            <option key={data._id} value={data.section}>
                               {data.section}
                             </option>
                           );
@@ -453,11 +422,7 @@ const CreateSchedule = () => {
                         <option>Select</option>
                         {isSubject.map((data) => {
                           return (
-                            <option
-                              key={data._id}
-                              onClick={() => HandleGetSubject(data._id)}
-                              value={data.subject}
-                            >
+                            <option key={data._id} value={data.subject}>
                               {data.subject}
                             </option>
                           );
@@ -481,11 +446,7 @@ const CreateSchedule = () => {
                       <option>Select</option>
                       {isIntructor.map((data) => {
                         return (
-                          <option
-                            key={data._id}
-                            onClick={() => HandleGetInstructor(data._id)}
-                            value={data.instructor}
-                          >
+                          <option key={data._id} value={data.instructor}>
                             {data.instructor}
                           </option>
                         );

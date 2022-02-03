@@ -10,7 +10,8 @@ const ViewClassSchedule = () => {
   document.title = "View Class Schedule";
   const [isSection, setSection] = useState([]);
   const [isSchedule, setSchedule] = useState([]);
-  const [isSelectSection, setSelectSection] = useState("");
+  const [isSelectSection, setSelectSection] = useState("Select");
+  const [isSelectVisible, setSelectVisible] = useState(false);
   const [isID, setID] = useState("");
 
   const SearchSectionAPI = `${Api.api}/api/search-by-section/`;
@@ -799,7 +800,7 @@ const ViewClassSchedule = () => {
 
     return (
       <table>
-        <tbody>
+        <thead>
           <tr>
             <th>PERIOD</th>
             <th>MONDAY</th>
@@ -810,6 +811,8 @@ const ViewClassSchedule = () => {
             <th>SATURDAY</th>
             <th>SUNDAY</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>7:00 - 8:00</td>
             <td>
@@ -1373,33 +1376,57 @@ const ViewClassSchedule = () => {
       .catch((error) => console.log("error", error));
   };
 
+  const HandleDropdownVisibility = () => {
+    setSelectVisible(!isSelectVisible);
+  };
+  const HandleSelected = (data) => {
+    setSelectSection(data.section);
+    setID(data.section);
+    setSelectVisible(false);
+  };
+
   return (
     <>
       <Navigation />
+      {isSelectVisible ? (
+        <div className="drop-shadow" onClick={() => setSelectVisible(false)} />
+      ) : undefined}
       <div className="vcs-con">
         <div className="wrapper-con">
           <div className="btns-sched">
             <div className="con-sep">
-              <div className="custom-select">
-                <select
-                  value={isSelectSection}
-                  onChange={(data) => setSelectSection(data.target.value)}
+              <div className="custom-dropdown">
+                <div
+                  className="default"
+                  onClick={() => HandleDropdownVisibility()}
                 >
-                  <option>Select</option>
-                  {isSection.map((data) => {
-                    return (
-                      <option
-                        key={data._id}
-                        onClick={() => setID(data._id)}
-                        value={data.section}
-                      >
-                        {data.section}
-                      </option>
-                    );
-                  })}
-                </select>
-                <div className="custom-icon">
-                  <FaAngleDown color="#EDEDED" />
+                  <div>{isSelectSection}</div>
+                  <div className="drp-icon">
+                    <FaAngleDown color="black" />
+                  </div>
+                </div>
+                <div
+                  className="dropdown"
+                  style={{
+                    display: `${isSelectVisible ? "block" : "none"}`,
+                    zIndex: `${isSelectVisible ? 99999 : "none"}`,
+                  }}
+                >
+                  {isSelectVisible ? (
+                    <>
+                      {isSection.map((data) => {
+                        return (
+                          <div
+                            key={data._id}
+                            className="d-data"
+                            onClick={() => HandleSelected(data)}
+                          >
+                            {data.section}
+                          </div>
+                        );
+                      })}
+                    </>
+                  ) : undefined}
                 </div>
               </div>
               <div className="btn" onClick={() => HandleGetSections()}>

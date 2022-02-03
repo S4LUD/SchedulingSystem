@@ -10,7 +10,8 @@ const ViewInstructorSchedule = () => {
   document.title = "View Instructor Schedule";
   const [isSection, setSection] = useState([]);
   const [isSchedule, setSchedule] = useState([]);
-  const [isSelectSection, setSelectSection] = useState("");
+  const [isSelectSection, setSelectSection] = useState("Select");
+  const [isSelectVisible, setSelectVisible] = useState(false);
   const [isID, setID] = useState("");
 
   const SearchSectionAPI = `${Api.api}/api/search-by-instructor/`;
@@ -1233,33 +1234,58 @@ const ViewInstructorSchedule = () => {
       .catch((error) => console.log("error", error));
   };
 
+  const HandleDropdownVisibility = () => {
+    setSelectVisible(!isSelectVisible);
+  };
+
+  const HandleSelected = (data) => {
+    setSelectSection(data.instructor);
+    setID(data.instructor);
+    setSelectVisible(false);
+  };
+
   return (
     <>
       <Navigation />
+      {isSelectVisible ? (
+        <div className="drop-shadow" onClick={() => setSelectVisible(false)} />
+      ) : undefined}
       <div className="vcs-con">
         <div className="wrapper-con">
           <div className="btns-sched">
             <div className="con-sep">
-              <div className="custom-select">
-                <select
-                  value={isSelectSection}
-                  onChange={(data) => setSelectSection(data.target.value)}
+              <div className="custom-dropdown">
+                <div
+                  className="default"
+                  onClick={() => HandleDropdownVisibility()}
                 >
-                  <option>Select</option>
-                  {isSection.map((data) => {
-                    return (
-                      <option
-                        key={data._id}
-                        onClick={() => setID(data._id)}
-                        value={data.instructor}
-                      >
-                        {data.instructor}
-                      </option>
-                    );
-                  })}
-                </select>
-                <div className="custom-icon">
-                  <FaAngleDown color="#EDEDED" />
+                  <div>{isSelectSection}</div>
+                  <div className="drp-icon">
+                    <FaAngleDown color="black" />
+                  </div>
+                </div>
+                <div
+                  className="dropdown"
+                  style={{
+                    display: `${isSelectVisible ? "block" : "none"}`,
+                    zIndex: `${isSelectVisible ? 99999 : "none"}`,
+                  }}
+                >
+                  {isSelectVisible ? (
+                    <>
+                      {isSection.map((data) => {
+                        return (
+                          <div
+                            key={data._id}
+                            className="d-data"
+                            onClick={() => HandleSelected(data)}
+                          >
+                            {data.instructor}
+                          </div>
+                        );
+                      })}
+                    </>
+                  ) : undefined}
                 </div>
               </div>
               <div className="btn" onClick={() => HandleGetSections()}>
@@ -1285,29 +1311,13 @@ const ViewInstructorSchedule = () => {
                   <span className="t4">College of Engineering</span>
                   <span className="t5">CLASS SCHEDULE</span>
                   <span className="t6">First Semester, A.Y. 2021 - 2022</span>
-                  {/* <span className="t6">{`${isSection.map((data) => {
-                    console.log(data);
-                    return data.semester;
-                  })} A.Y. 2021 - 2022`}</span> */}
                 </div>
               </div>
-              {/* <div className="simple-details">
-                <span className="sim-det">{`Program: ${isSection.map((data) => {
-                  return data.course;
-                })}`}</span>
-                <span className="sim-det">{`Year: ${isSection.map((data) => {
-                  return data.year;
-                })}`}</span>
-                <span className="sim-det">{`Section: ${isSection.map((data) => {
-                  return data.section;
-                })}`}</span>
-              </div> */}
               <HandleTable />
               <div className="signature-con">
                 <span className="prepared">Prepared by:</span>
                 <div className="signature">
                   <span className="sigs">Associate Dean</span>
-                  {/* <span className="sigs">Adviser</span> */}
                 </div>
               </div>
             </div>
