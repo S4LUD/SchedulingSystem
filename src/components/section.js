@@ -29,10 +29,6 @@ const Section = () => {
   const [isDisabledYear, setDisabledYear] = useState(true);
   const pageNumbers = [];
 
-  const [isGetCourse, setGetCourse] = useState("");
-  const [isGetYear, setGetYear] = useState("");
-  const [isGetSemester, setGetSemester] = useState("");
-
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
@@ -63,53 +59,45 @@ const Section = () => {
       redirect: "follow",
     };
 
-    (async () => {
-      await fetch(YearAPI, GetRequest, { signal: AbortCntrlr.signal })
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could not fetch the data");
-          }
-          return response.json();
-        })
-        .then((result) => setYear(result))
-        .catch((error) => console.log("error", error));
-    })();
+    fetch(YearAPI, GetRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setYear(result))
+      .catch((error) => console.log("error", error));
 
-    (async () => {
-      await fetch(API, GetRequest, { signal: AbortCntrlr.signal })
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could not fetch the data");
-          }
-          return response.json();
-        })
-        .then((result) => setData(result))
-        .catch((error) => console.log("error", error));
-    })();
+    fetch(API, GetRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setData(result))
+      .catch((error) => console.log("error", error));
 
-    (async () => {
-      await fetch(CourseAPI, GetRequest, { signal: AbortCntrlr.signal })
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could not fetch the data");
-          }
-          return response.json();
-        })
-        .then((result) => setCourse(result))
-        .catch((error) => console.log("error", error));
-    })();
+    fetch(CourseAPI, GetRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setCourse(result))
+      .catch((error) => console.log("error", error));
 
-    (async () => {
-      await fetch(SemesterAPI, GetRequest, { signal: AbortCntrlr.signal })
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could not fetch the data");
-          }
-          return response.json();
-        })
-        .then((result) => setSemester(result))
-        .catch((error) => console.log("error", error));
-    })();
+    fetch(SemesterAPI, GetRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setSemester(result))
+      .catch((error) => console.log("error", error));
 
     return () => AbortCntrlr.abort();
   }, [API, CourseAPI, YearAPI, SemesterAPI]);
@@ -240,7 +228,7 @@ const Section = () => {
     setVisibleUpdate(true);
   };
 
-  const HandleConfirmUpdate = (isRoomUpdate) => {
+  const HandleConfirmUpdate = async (isRoomUpdate) => {
     if (!isRoomUpdate) return setErroru(true);
     setErroru(false);
 
@@ -256,7 +244,7 @@ const Section = () => {
       redirect: "follow",
     };
 
-    fetch(API, PatchRequest)
+    await fetch(API, PatchRequest)
       .then((response) => {
         if (!response.ok) {
           throw Error("Could not fetch the data");
@@ -283,9 +271,9 @@ const Section = () => {
     setLoading(true);
     const raw = JSON.stringify({
       section: isRoom,
-      semester: isGetSemester,
-      course: isGetCourse,
-      year: isGetYear,
+      semester: isSelectSemester,
+      course: isSelect,
+      year: isSelectYear,
     });
 
     const PostRequest = {
@@ -332,9 +320,8 @@ const Section = () => {
       setError(false);
       setSelectedYear("");
     }
-
-    setError(false);
     setSelectedYear(data);
+    setError(false);
   };
 
   const HandleSelectedValueSemester = (data) => {
@@ -347,18 +334,6 @@ const Section = () => {
     setDisabled(false);
     setError(false);
     setSelectedSemester(data);
-  };
-
-  const HandleGetProgram = (data) => {
-    setGetCourse(data);
-  };
-
-  const HandleGetYear = (data) => {
-    setGetYear(data);
-  };
-
-  const HandleGeSemester = (data) => {
-    setGetSemester(data);
   };
 
   return (
@@ -379,11 +354,7 @@ const Section = () => {
                   <option>Select</option>
                   {isCourse.map((data) => {
                     return (
-                      <option
-                        key={data._id}
-                        value={data._id}
-                        onClick={() => HandleGetProgram(data.course)}
-                      >
+                      <option key={data._id} value={data.course}>
                         {data.course}
                       </option>
                     );
@@ -412,11 +383,7 @@ const Section = () => {
                   <option>Select</option>
                   {isYear.map((data) => {
                     return (
-                      <option
-                        key={data._id}
-                        value={data._id}
-                        onClick={() => HandleGetYear(data.year)}
-                      >
+                      <option key={data._id} value={data.year}>
                         {data.year}
                       </option>
                     );
@@ -445,11 +412,7 @@ const Section = () => {
                   <option>Select</option>
                   {isSemester.map((data) => {
                     return (
-                      <option
-                        key={data._id}
-                        value={data._id}
-                        onClick={() => HandleGeSemester(data.semester)}
-                      >
+                      <option key={data._id} value={data.semester}>
                         {data.semester}
                       </option>
                     );
