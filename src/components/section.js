@@ -55,6 +55,8 @@ const Section = () => {
   };
 
   useEffect(() => {
+    const AbortCntrlr = new AbortController();
+
     const GetRequest = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -62,7 +64,7 @@ const Section = () => {
     };
 
     (async () => {
-      await fetch(YearAPI, GetRequest)
+      await fetch(YearAPI, GetRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -74,7 +76,7 @@ const Section = () => {
     })();
 
     (async () => {
-      await fetch(API, GetRequest)
+      await fetch(API, GetRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -86,7 +88,7 @@ const Section = () => {
     })();
 
     (async () => {
-      await fetch(CourseAPI, GetRequest)
+      await fetch(CourseAPI, GetRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -98,7 +100,7 @@ const Section = () => {
     })();
 
     (async () => {
-      await fetch(SemesterAPI, GetRequest)
+      await fetch(SemesterAPI, GetRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -108,6 +110,8 @@ const Section = () => {
         .then((result) => setSemester(result))
         .catch((error) => console.log("error", error));
     })();
+
+    return () => AbortCntrlr.abort();
   }, [API, CourseAPI, YearAPI, SemesterAPI]);
 
   const indexOfLastData = isCurrentPage * isPostPerPage;
@@ -299,12 +303,11 @@ const Section = () => {
         return response.json();
       })
       .then((result) => {
-        console.log(result);
-        // if (result.message === "OK") {
-        //   UpdateData();
-        //   setRoom("");
-        //   setLoading(false);
-        // }
+        if (result.message === "OK") {
+          UpdateData();
+          setRoom("");
+          setLoading(false);
+        }
       })
       .catch((error) => console.log("error", error));
   };

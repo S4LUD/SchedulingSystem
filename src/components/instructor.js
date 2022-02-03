@@ -40,6 +40,8 @@ const Instructor = () => {
   };
 
   useEffect(() => {
+    const AbortCntrlr = new AbortController();
+
     const GetRequest = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -47,7 +49,7 @@ const Instructor = () => {
     };
 
     (async () => {
-      await fetch(API, GetRequest)
+      await fetch(API, GetRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -57,6 +59,8 @@ const Instructor = () => {
         .then((result) => setData(result))
         .catch((error) => console.log("error", error));
     })();
+
+    return () => AbortCntrlr.abort();
   }, [API]);
 
   const indexOfLastData = isCurrentPage * isPostPerPage;

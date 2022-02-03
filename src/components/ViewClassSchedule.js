@@ -1359,6 +1359,8 @@ const ViewClassSchedule = () => {
   }, [SectionAPI]);
 
   const HandleGetSections = async () => {
+    if (isID === "") return;
+
     const GetScheduleRequest = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -1414,6 +1416,9 @@ const ViewClassSchedule = () => {
                 >
                   {isSelectVisible ? (
                     <>
+                      {isSection.length === 0 ? (
+                        <div className="no-data">NO DATA</div>
+                      ) : undefined}
                       {isSection.map((data) => {
                         return (
                           <div
