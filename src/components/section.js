@@ -278,7 +278,6 @@ const Section = () => {
 
     setLoading(true);
     const raw = JSON.stringify({
-      course_id: isSelect,
       section: isRoom,
       semester: isGetSemester,
       course: isGetCourse,
@@ -300,11 +299,12 @@ const Section = () => {
         return response.json();
       })
       .then((result) => {
-        if (result.message === "OK") {
-          UpdateData();
-          setRoom("");
-          setLoading(false);
-        }
+        console.log(result);
+        // if (result.message === "OK") {
+        //   UpdateData();
+        //   setRoom("");
+        //   setLoading(false);
+        // }
       })
       .catch((error) => console.log("error", error));
   };
