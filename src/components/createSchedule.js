@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Navigation from "./navigation";
 import { FaTrashAlt, FaAngleDown } from "react-icons/fa";
 import Api from "./api.json";
+import { useNavigate } from "react-router-dom";
+import Image from "../assets/school-logo.png";
 
 const CreateSchedule = () => {
   document.title = "Schedule";
@@ -27,6 +29,8 @@ const CreateSchedule = () => {
   const [isSelectedSubject, setSelectedSubject] = useState("");
   const [isSelectedInstructor, setSelectedInstructor] = useState("");
   const [isSelectedCourse, setSelectedCourse] = useState("");
+  const [isValidate, setValidate] = useState(false);
+  const [isVerify, setVerify] = useState(false);
 
   const RoomAPI = `${Api.api}/api/room`;
   const SubjectAPI = `${Api.api}/api/subject`;
@@ -35,34 +39,79 @@ const CreateSchedule = () => {
   const SearchCourseAPI = `${Api.api}/api/search-by-course/`;
   const SearchSectionAPI = `${Api.api}/api/search-by-section/`;
   const ScheduleAPI = `${Api.api}/api/schedule`;
+  const VerifyAPI = `${Api.api}/api/verify`;
+  const navigate = useNavigate();
+
+  useLayoutEffect(() => {
+    setVerify(true);
+    const AbortCntrlr = new AbortController();
+
+    const VerifyRequest = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
+      redirect: "follow",
+    };
+
+    setTimeout(() => {
+      fetch(VerifyAPI, VerifyRequest, { signal: AbortCntrlr.signal })
+        .then((response) => response.json())
+        .then((result) => {
+          if (!result._id) {
+            sessionStorage.setItem("ss-crdntl-vld", "false");
+            navigate("/login", { replace: true });
+          }
+          sessionStorage.setItem("ss-crdntl-vld", "true");
+          setVerify(false);
+        });
+    }, 1000);
+
+    return () => AbortCntrlr.abort();
+  }, [VerifyAPI, navigate]);
 
   useEffect(() => {
+    const AbortCntrlr = new AbortController();
+
     const GetCourseRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
     const GetRoomRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
     const GetSubjectRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
     const GetInstructotRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
     (async () => {
-      await fetch(CourseAPI, GetCourseRequest)
+      await fetch(CourseAPI, GetCourseRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -74,7 +123,7 @@ const CreateSchedule = () => {
     })();
 
     (async () => {
-      await fetch(RoomAPI, GetRoomRequest)
+      await fetch(RoomAPI, GetRoomRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -86,7 +135,7 @@ const CreateSchedule = () => {
     })();
 
     (async () => {
-      await fetch(SubjectAPI, GetSubjectRequest)
+      await fetch(SubjectAPI, GetSubjectRequest, { signal: AbortCntrlr.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -98,7 +147,9 @@ const CreateSchedule = () => {
     })();
 
     (async () => {
-      await fetch(InstructorAPI, GetInstructotRequest)
+      await fetch(InstructorAPI, GetInstructotRequest, {
+        signal: AbortCntrlr.signal,
+      })
         .then((response) => {
           if (!response.ok) {
             throw Error("Could not fetch the data");
@@ -108,6 +159,8 @@ const CreateSchedule = () => {
         .then((result) => setIntructor(result))
         .catch((error) => console.log("error", error));
     })();
+
+    return () => AbortCntrlr.abort();
   }, [RoomAPI, CourseAPI, SubjectAPI, InstructorAPI]);
 
   const HandleSelected = (data) => {
@@ -129,7 +182,10 @@ const CreateSchedule = () => {
   const HandleGetSections = async (data) => {
     const SearchCourseRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -150,7 +206,10 @@ const CreateSchedule = () => {
 
     const SearchSectionRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -166,6 +225,15 @@ const CreateSchedule = () => {
   };
 
   const HandleSaveSchedule = async () => {
+    if (isSelectedCourse === "Select") return setValidate(true);
+    if (isSelectSection === "Select") return setValidate(true);
+    if (isSelectedRoom === "Select") return setValidate(true);
+    if (isSelectedDay === "Select") return setValidate(true);
+    if (isSelectedTimeslot === "Select") return setValidate(true);
+    if (isSelectedSubject === "Select") return setValidate(true);
+    if (isSelectedInstructor === "Select") return setValidate(true);
+
+    setValidate(false);
     setLoading(true);
 
     const raw = JSON.stringify({
@@ -180,7 +248,10 @@ const CreateSchedule = () => {
 
     const ScheduleRequest = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -235,7 +306,10 @@ const CreateSchedule = () => {
 
     const RequestDelete = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -260,6 +334,12 @@ const CreateSchedule = () => {
   return (
     <>
       <Navigation />
+      {isVerify ? (
+        <div className="verified">
+          <img src={Image} alt="Logo" />
+          <span>Checking Credentials... Please wait.</span>
+        </div>
+      ) : undefined}
       {isVisible ? <HandleModalDelete /> : undefined}
       {isErrorVisible ? (
         <div className="error-modal" onClick={() => setErrorVisible(false)}>
@@ -457,6 +537,9 @@ const CreateSchedule = () => {
                     </div>
                   </div>
                 </div>
+                {isValidate ? (
+                  <div className="error">Don't leave the field blank.</div>
+                ) : undefined}
                 <div className="btns">
                   <div className="btn clear">Clear</div>
                   <div

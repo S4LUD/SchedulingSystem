@@ -3,6 +3,7 @@ import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Api from "./api.json";
 
 const Instructor = () => {
+  document.title = "Manage Instructor";
   const API = `${Api.api}/api/instructor`;
 
   const [isData, setData] = useState([]);
@@ -10,6 +11,7 @@ const Instructor = () => {
   const isPostPerPage = 8;
   const [isID, setID] = useState("");
   const [isJumpTo, setJumpTo] = useState("");
+  const [isIns, setIns] = useState("");
   const [isVisible, setVisible] = useState(false);
   const [isVisibleUpdate, setVisibleUpdate] = useState(false);
   const [isLoading, setLoading] = useState(false);
@@ -21,7 +23,10 @@ const Instructor = () => {
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -44,7 +49,10 @@ const Instructor = () => {
 
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -98,7 +106,10 @@ const Instructor = () => {
 
     const RequestDelete = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -125,7 +136,9 @@ const Instructor = () => {
         <div className="modal-wrap">
           <div className="title">Message</div>
           <div className="modal-des">
-            <div className="content">Are you sure to delete this room?</div>
+            <div className="content">
+              Are you sure to delete this Instructor?
+            </div>
           </div>
           <div className="btns">
             <div className="btn yes" onClick={() => HandleConfirm()}>
@@ -182,8 +195,9 @@ const Instructor = () => {
     );
   };
 
-  const HandleUpdate = (id) => {
-    setID(id);
+  const HandleUpdate = (data) => {
+    setID(data._id);
+    setIns(data.instructor);
     setVisibleUpdate(true);
   };
 
@@ -194,11 +208,15 @@ const Instructor = () => {
     const raw = JSON.stringify({
       _id: isID,
       instructor: isRoomUpdate,
+      oldins: isIns,
     });
 
     const PatchRequest = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -234,7 +252,10 @@ const Instructor = () => {
 
     const PostRequest = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -311,7 +332,7 @@ const Instructor = () => {
                           </div>
                           <div
                             className="upd"
-                            onClick={() => HandleUpdate(data._id)}
+                            onClick={() => HandleUpdate(data)}
                           >
                             <FaEdit color="white" size={17} />
                             <span>Update</span>

@@ -1,21 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Navigation from "./navigation";
 import { FaAngleDown } from "react-icons/fa";
 import Image from "../assets/school-logo.png";
 import * as htmlToImage from "html-to-image";
 import download from "downloadjs";
 import Api from "./api.json";
+import { useNavigate } from "react-router-dom";
 
 const ViewClassSchedule = () => {
   document.title = "View Class Schedule";
+  const VerifyAPI = `${Api.api}/api/verify`;
   const [isSection, setSection] = useState([]);
   const [isSchedule, setSchedule] = useState([]);
   const [isSelectSection, setSelectSection] = useState("Select");
   const [isSelectVisible, setSelectVisible] = useState(false);
   const [isID, setID] = useState("");
+  const [isSec, setSec] = useState("");
+  const [isSecData, setSecData] = useState([]);
+  const [isSemester, setSemester] = useState([]);
 
   const SearchSectionAPI = `${Api.api}/api/search-by-section/`;
+  const SearchSecAPI = `${Api.api}/api/searchbysection/`;
   const SectionAPI = `${Api.api}/api/section/`;
+  const SemesterAPI = `${Api.api}/api/semester`;
+  const navigate = useNavigate();
+  const [isVerify, setVerify] = useState(false);
+
+  useLayoutEffect(() => {
+    setVerify(true);
+    const AbortCntrlr = new AbortController();
+
+    const VerifyRequest = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
+      redirect: "follow",
+    };
+
+    setTimeout(() => {
+      fetch(VerifyAPI, VerifyRequest, { signal: AbortCntrlr.signal })
+        .then((response) => response.json())
+        .then((result) => {
+          if (!result._id) {
+            sessionStorage.setItem("ss-crdntl-vld", "false");
+            setVerify(false);
+          }
+          setVerify(false);
+        });
+    }, 1000);
+
+    return () => AbortCntrlr.abort();
+  }, [VerifyAPI, navigate]);
 
   const HandleCapture = () => {
     if (isSchedule.length === 0) return;
@@ -1339,24 +1376,35 @@ const ViewClassSchedule = () => {
   };
 
   useEffect(() => {
+    const AbortCntrlr = new AbortController();
+
     const GetSectionRequest = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       redirect: "follow",
     };
 
-    (async () => {
-      await fetch(SectionAPI, GetSectionRequest)
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Could not fetch the data");
-          }
-          return response.json();
-        })
-        .then((result) => setSection(result))
-        .catch((error) => console.log("error", error));
-    })();
-  }, [SectionAPI]);
+    fetch(SectionAPI, GetSectionRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setSection(result))
+      .catch((error) => console.log("error", error));
+    fetch(SemesterAPI, GetSectionRequest, { signal: AbortCntrlr.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setSemester(result))
+      .catch((error) => console.log("error", error));
+
+    return () => AbortCntrlr.abort();
+  }, [SectionAPI, SemesterAPI]);
 
   const HandleGetSections = async () => {
     if (isID === "") return;
@@ -1376,6 +1424,16 @@ const ViewClassSchedule = () => {
       })
       .then((result) => setSchedule(result))
       .catch((error) => console.log("error", error));
+
+    await fetch(SearchSecAPI + isSec, GetScheduleRequest)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Could not fetch the data");
+        }
+        return response.json();
+      })
+      .then((result) => setSecData(result))
+      .catch((error) => console.log("error", error));
   };
 
   const HandleDropdownVisibility = () => {
@@ -1384,12 +1442,19 @@ const ViewClassSchedule = () => {
   const HandleSelected = (data) => {
     setSelectSection(data.section);
     setID(data.section);
+    setSec(data.section);
     setSelectVisible(false);
   };
 
   return (
     <>
       <Navigation />
+      {isVerify ? (
+        <div className="verified">
+          <img src={Image} alt="Logo" />
+          <span>Checking Credentials... Please wait.</span>
+        </div>
+      ) : undefined}
       {isSelectVisible ? (
         <div className="drop-shadow" onClick={() => setSelectVisible(false)} />
       ) : undefined}
@@ -1456,19 +1521,24 @@ const ViewClassSchedule = () => {
                   <span className="t3">Province of Laguna</span>
                   <span className="t4">College of Engineering</span>
                   <span className="t5">CLASS SCHEDULE</span>
-                  <span className="t6">{`${isSection.map((data) => {
-                    return data.semester;
-                  })}, A.Y. 2021 - 2022`}</span>
+                  {isSemester.map((data) => {
+                    return (
+                      <div
+                        className="t6"
+                        key={data._id}
+                      >{`${data.semester}, A.Y. ${data.year}`}</div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="simple-details">
-                <span className="sim-det">{`Program: ${isSection.map((data) => {
+                <span className="sim-det">{`Program: ${isSecData.map((data) => {
                   return data.course;
                 })}`}</span>
-                <span className="sim-det">{`Year: ${isSection.map((data) => {
+                <span className="sim-det">{`Year: ${isSecData.map((data) => {
                   return data.year;
                 })}`}</span>
-                <span className="sim-det">{`Section: ${isSection.map((data) => {
+                <span className="sim-det">{`Section: ${isSecData.map((data) => {
                   return data.section;
                 })}`}</span>
               </div>

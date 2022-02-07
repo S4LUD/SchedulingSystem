@@ -17,6 +17,143 @@ body {
   scroll-behavior: smooth;
 }
 
+.verified {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: white;
+  z-index: 999999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.verified img {
+  width: 100px;
+}
+
+.verified span {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.verify {
+  background: #ffffff;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.verify img {
+  width: 100px;
+}
+
+.verify span {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.schoolyear-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+}
+
+.schoolyear-con .schlyr-wrapper {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 350px;
+  padding: 20px;
+  height: 255px;
+}
+
+.schoolyear-con .schlyr-wrapper .current {
+  padding: 5px;
+  background: #e4e4e4;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.schoolyear-con .schlyr-wrapper .title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-bottom: 1px solid #dfdfdf;
+  width: 100%;
+  text-align: center;
+}
+
+.schoolyear-con .schlyr-wrapper .con input {
+  padding: 10px;
+  width: 125px;
+  text-align: center;
+}
+
+.schoolyear-con .schlyr-wrapper .con select {
+  margin-left: 10px;
+  padding: 10px;
+  outline: none;
+}
+
+.schoolyear-con .schlyr-wrapper .btn {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  background: #52abfa;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.schoolyear-con .schlyr-wrapper .btn:hover {
+  background: #3789d1;
+}
+
 .vcs-con {
   padding-top: 80px;
 }
@@ -440,6 +577,19 @@ body {
   font-weight: bold;
   margin-top: 10px;
   border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.error-l {
+  font-size: 12px;
+  padding: 5px;
+  background: #fa3636;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
 }
 
 .no-data {
@@ -1044,8 +1194,8 @@ body {
 .management-con .internal-nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   height: 40px;
   margin: 20px 50px 10px 50px;
   background: #ffffff;
@@ -1693,6 +1843,9 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-con .right-info .btn {
@@ -1705,14 +1858,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 .login-con .right-info .btn .btn-dsgn {
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   background: #1b531e;
-  padding: 10px;
+  padding: 10px 15px;
   color: white;
   font-size: 14px;
   display: -webkit-box;
@@ -1729,13 +1882,16 @@ body {
 
 .login-con .right-info .login-wrappper {
   color: white;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 20px;
   background: #1b531e;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
 }
 
 .login-con .right-info .r-con {
-  padding: 35px;
+  padding: 10px 35px;
 }
 
 .login-con .right-info .r-con input {

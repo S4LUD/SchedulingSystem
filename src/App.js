@@ -11,6 +11,8 @@ import Instructor from "./components/instructor";
 import Section from "./components/section";
 import ViewClassSchedule from "./components/ViewClassSchedule";
 import ViewInstructorSchedule from "./components/ViewInstructorSchedule";
+import SchoolYear from "./components/SchoolYear";
+import Verification from "./components/verification";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<Homepage />} />
+          <Route path="credential" exact element={<Verification />}>
+            <Route path=":auth" exact element={<Verification />} />
+          </Route>
           <Route path="login" exact element={<Login />} />
           <Route path="dashboard" exact element={<Dashboard />} />
           <Route path="schedule" exact element={<CreateSchedule />} />
@@ -32,6 +37,7 @@ function App() {
             <Route path="section" exact element={<Section />} />
             <Route path="subject" exact element={<Subject />} />
             <Route path="instructor" exact element={<Instructor />} />
+            <Route path="school/year" exact element={<SchoolYear />} />
           </Route>
         </Routes>
       </BrowserRouter>

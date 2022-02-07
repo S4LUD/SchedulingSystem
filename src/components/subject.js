@@ -3,6 +3,7 @@ import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Api from "./api.json";
 
 const Subject = () => {
+  document.title = "Manage Subject";
   const API = `${Api.api}/api/subject`;
 
   const [isData, setData] = useState([]);
@@ -16,12 +17,16 @@ const Subject = () => {
   const [isRoom, setRoom] = useState("");
   const [isError, setError] = useState(false);
   const [isErroru, setErroru] = useState(false);
+  const [isSub, setSub] = useState("");
   const pageNumbers = [];
 
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -44,7 +49,10 @@ const Subject = () => {
 
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -98,7 +106,10 @@ const Subject = () => {
 
     const RequestDelete = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -125,7 +136,7 @@ const Subject = () => {
         <div className="modal-wrap">
           <div className="title">Message</div>
           <div className="modal-des">
-            <div className="content">Are you sure to delete this room?</div>
+            <div className="content">Are you sure to delete this Subject?</div>
           </div>
           <div className="btns">
             <div className="btn yes" onClick={() => HandleConfirm()}>
@@ -182,8 +193,9 @@ const Subject = () => {
     );
   };
 
-  const HandleUpdate = (id) => {
-    setID(id);
+  const HandleUpdate = (data) => {
+    setID(data._id);
+    setSub(data.subject);
     setVisibleUpdate(true);
   };
 
@@ -194,11 +206,15 @@ const Subject = () => {
     const raw = JSON.stringify({
       _id: isID,
       subject: isRoomUpdate,
+      isSub: isSub,
     });
 
     const PatchRequest = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -234,7 +250,10 @@ const Subject = () => {
 
     const PostRequest = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -311,7 +330,7 @@ const Subject = () => {
                           </div>
                           <div
                             className="upd"
-                            onClick={() => HandleUpdate(data._id)}
+                            onClick={() => HandleUpdate(data)}
                           >
                             <FaEdit color="white" size={17} />
                             <span>Update</span>

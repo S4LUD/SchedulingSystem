@@ -3,15 +3,14 @@ import { FaTrashAlt, FaEdit, FaAngleDown } from "react-icons/fa";
 import Api from "./api.json";
 
 const Section = () => {
+  document.title = "Manage Section";
   const API = `${Api.api}/api/section`;
   const CourseAPI = `${Api.api}/api/course`;
   const YearAPI = `${Api.api}/api/year`;
-  const SemesterAPI = `${Api.api}/api/semester`;
 
   const [isData, setData] = useState([]);
   const [isCourse, setCourse] = useState([]);
   const [isYear, setYear] = useState([]);
-  const [isSemester, setSemester] = useState([]);
   const [isCurrentPage, setCurrentPage] = useState(1);
   const isPostPerPage = 8;
   const [isID, setID] = useState("");
@@ -24,15 +23,19 @@ const Section = () => {
   const [isErroru, setErroru] = useState(false);
   const [isSelect, setSelected] = useState("");
   const [isSelectYear, setSelectedYear] = useState("");
-  const [isSelectSemester, setSelectedSemester] = useState("");
   const [isDisabled, setDisabled] = useState(true);
   const [isDisabledYear, setDisabledYear] = useState(true);
   const pageNumbers = [];
+  const [isSec, setSec] = useState("");
+  const [isSecN, setSecN] = useState("");
 
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -55,19 +58,12 @@ const Section = () => {
 
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
-
-    fetch(YearAPI, GetRequest, { signal: AbortCntrlr.signal })
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Could not fetch the data");
-        }
-        return response.json();
-      })
-      .then((result) => setYear(result))
-      .catch((error) => console.log("error", error));
 
     fetch(API, GetRequest, { signal: AbortCntrlr.signal })
       .then((response) => {
@@ -89,18 +85,18 @@ const Section = () => {
       .then((result) => setCourse(result))
       .catch((error) => console.log("error", error));
 
-    fetch(SemesterAPI, GetRequest, { signal: AbortCntrlr.signal })
+    fetch(YearAPI, GetRequest, { signal: AbortCntrlr.signal })
       .then((response) => {
         if (!response.ok) {
           throw Error("Could not fetch the data");
         }
         return response.json();
       })
-      .then((result) => setSemester(result))
+      .then((result) => setYear(result))
       .catch((error) => console.log("error", error));
 
     return () => AbortCntrlr.abort();
-  }, [API, CourseAPI, YearAPI, SemesterAPI]);
+  }, [API, CourseAPI, YearAPI]);
 
   const indexOfLastData = isCurrentPage * isPostPerPage;
   const indexOfFirstData = indexOfLastData - isPostPerPage;
@@ -127,19 +123,24 @@ const Section = () => {
     }
   };
 
-  const HandleDelete = async (id) => {
-    setID(id);
+  const HandleDelete = async (data) => {
+    setID(data._id);
+    setSecN(data.section);
     setVisible(true);
   };
 
   const HandleConfirm = async () => {
     const raw = JSON.stringify({
       _id: isID,
+      isSec: isSecN,
     });
 
     const RequestDelete = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -166,7 +167,7 @@ const Section = () => {
         <div className="modal-wrap">
           <div className="title">Message</div>
           <div className="modal-des">
-            <div className="content">Are you sure to delete this room?</div>
+            <div className="content">Are you sure to delete this Section?</div>
           </div>
           <div className="btns">
             <div className="btn yes" onClick={() => HandleConfirm()}>
@@ -223,8 +224,9 @@ const Section = () => {
     );
   };
 
-  const HandleUpdate = (id) => {
-    setID(id);
+  const HandleUpdate = (data) => {
+    setID(data._id);
+    setSec(data.section);
     setVisibleUpdate(true);
   };
 
@@ -234,12 +236,16 @@ const Section = () => {
 
     const raw = JSON.stringify({
       _id: isID,
+      isSec: isSec,
       section: isRoomUpdate,
     });
 
     const PatchRequest = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -271,14 +277,16 @@ const Section = () => {
     setLoading(true);
     const raw = JSON.stringify({
       section: isRoom,
-      semester: isSelectSemester,
       course: isSelect,
       year: isSelectYear,
     });
 
     const PostRequest = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -322,18 +330,7 @@ const Section = () => {
     }
     setSelectedYear(data);
     setError(false);
-  };
-
-  const HandleSelectedValueSemester = (data) => {
-    if (data === "Select") {
-      setDisabled(true);
-      setError(false);
-      setSelectedSemester("");
-    }
-
     setDisabled(false);
-    setError(false);
-    setSelectedSemester(data);
   };
 
   return (
@@ -395,35 +392,6 @@ const Section = () => {
               </div>
             </div>
           </div>
-          <div className={`t-itle ${isDisabledYear ? "disabled" : undefined}`}>
-            Semester
-          </div>
-          <div
-            className={`top-wrap ${isDisabledYear ? "disabled" : undefined}`}
-          >
-            <div className="selection">
-              <div className="custom-select">
-                <select
-                  value={isSelectSemester}
-                  onChange={(data) =>
-                    HandleSelectedValueSemester(data.target.value)
-                  }
-                >
-                  <option>Select</option>
-                  {isSemester.map((data) => {
-                    return (
-                      <option key={data._id} value={data.semester}>
-                        {data.semester}
-                      </option>
-                    );
-                  })}
-                </select>
-                <div className="custom-icon">
-                  <FaAngleDown color="#EDEDED" />
-                </div>
-              </div>
-            </div>
-          </div>
           <div className={`bot-wrap ${isDisabled ? "disabled" : undefined}`}>
             <div className="t-itle">Section</div>
             <div className="wrapper">
@@ -467,14 +435,14 @@ const Section = () => {
                         <div className="action">
                           <div
                             className="del"
-                            onClick={() => HandleDelete(data._id)}
+                            onClick={() => HandleDelete(data)}
                           >
                             <FaTrashAlt color="white" size={17} />
                             <span>Delete</span>
                           </div>
                           <div
                             className="upd"
-                            onClick={() => HandleUpdate(data._id)}
+                            onClick={() => HandleUpdate(data)}
                           >
                             <FaEdit color="white" size={17} />
                             <span>Update</span>

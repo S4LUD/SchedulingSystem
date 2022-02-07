@@ -3,12 +3,6 @@ import { useLocation, Link } from "react-router-dom";
 
 const Navigation = () => {
   const location = useLocation();
-  const GotoAbout = () => {
-    document.getElementById("about").scrollIntoView();
-  };
-  const GotoFeature = () => {
-    document.getElementById("feature").scrollIntoView();
-  };
   return (
     <>
       <div className="nav-con">
@@ -16,21 +10,13 @@ const Navigation = () => {
         <div className="nav-btn">
           {location.pathname === "/" ? (
             <>
-              <div className="nav-btns nav-cd" onClick={() => GotoAbout()}>
-                About
-              </div>
-              <div className="nav-btns nav-cd" onClick={() => GotoFeature()}>
-                Features
-              </div>
               <Link to="/login">
                 <div className="nav-cdl">Login</div>
               </Link>
             </>
           ) : location.pathname === "/dashboard" ? (
             <>
-              {/* <div className="nav-btns nav-cd">About Us</div>
-              <div className="nav-btns nav-cd">How To</div> */}
-              <Link to="/">
+              <Link to="/credential/logout">
                 <div className="nav-btns nav-cd">Log Out</div>
               </Link>
             </>
@@ -150,14 +136,54 @@ const Navigation = () => {
             </>
           ) : location.pathname === "/class/schedule" ? (
             <>
-              <Link to="/dashboard">
+              {sessionStorage.getItem("ss-crdntl-vld") === "true" ? (
+                <Link to="/schedule">
+                  <div className="nav-btns nav-cd">Back</div>
+                </Link>
+              ) : undefined}
+              <Link
+                to={
+                  sessionStorage.getItem("ss-crdntl-vld") === "true"
+                    ? "/dashboard"
+                    : "/"
+                }
+              >
                 <div className="nav-btns nav-cd">Home</div>
               </Link>
             </>
           ) : location.pathname === "/class/instructor" ? (
             <>
+              {sessionStorage.getItem("ss-crdntl-vld") === "true" ? (
+                <Link to="/schedule">
+                  <div className="nav-btns nav-cd">Back</div>
+                </Link>
+              ) : undefined}
+              <Link
+                to={
+                  sessionStorage.getItem("ss-crdntl-vld") === "true"
+                    ? "/dashboard"
+                    : "/"
+                }
+              >
+                <div className="nav-btns nav-cd">Home</div>
+              </Link>
+            </>
+          ) : location.pathname === "/management/school/year" ? (
+            <>
               <Link to="/dashboard">
                 <div className="nav-btns nav-cd">Home</div>
+              </Link>
+              <Link to="/management">
+                <div className="nav-btns nav-cd hilight">Management</div>
+              </Link>
+              <Link to="/schedule">
+                <div className="nav-btns nav-cd">Schedule</div>
+              </Link>
+              <Link to="/class/schedule">
+                <div className="nav-btns nav-cd">View Class Schedules</div>
+              </Link>
+              <Link to="/class/instructor">
+                <div className="nav-btns nav-cd">View Intructor Schedules</div>
               </Link>
             </>
           ) : undefined}

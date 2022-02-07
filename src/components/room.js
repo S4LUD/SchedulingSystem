@@ -3,6 +3,7 @@ import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Api from "./api.json";
 
 const Room = () => {
+  document.title = "Manage Room";
   const API = `${Api.api}/api/room`;
 
   const [isData, setData] = useState([]);
@@ -17,11 +18,16 @@ const Room = () => {
   const [isError, setError] = useState(false);
   const [isErroru, setErroru] = useState(false);
   const pageNumbers = [];
+  const [isTempRoom, setTempRoom] = useState("");
+  const [isExist, setExist] = useState(false);
 
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -44,7 +50,10 @@ const Room = () => {
 
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -98,7 +107,10 @@ const Room = () => {
 
     const RequestDelete = {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -125,7 +137,7 @@ const Room = () => {
         <div className="modal-wrap">
           <div className="title">Message</div>
           <div className="modal-des">
-            <div className="content">Are you sure to delete this room?</div>
+            <div className="content">Are you sure to delete this Room?</div>
           </div>
           <div className="btns">
             <div className="btn yes" onClick={() => HandleConfirm()}>
@@ -182,7 +194,8 @@ const Room = () => {
     );
   };
 
-  const HandleUpdate = (id) => {
+  const HandleUpdate = (id, room) => {
+    setTempRoom(room);
     setID(id);
     setVisibleUpdate(true);
   };
@@ -194,11 +207,15 @@ const Room = () => {
     const raw = JSON.stringify({
       _id: isID,
       room: isRoomUpdate,
+      oldroom: isTempRoom,
     });
 
     const PatchRequest = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -234,24 +251,26 @@ const Room = () => {
 
     const PostRequest = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
 
     await fetch(API, PostRequest)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Could not fetch the data");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((result) => {
         if (result.message === "OK") {
           UpdateData();
           setRoom("");
           setLoading(false);
+          setExist(false);
         }
+        setExist(true);
+        setRoom("");
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
   };
@@ -276,6 +295,9 @@ const Room = () => {
                 <div className="error">
                   Don't leave this blank before saving
                 </div>
+              ) : undefined}
+              {isExist ? (
+                <div className="error">Room is already exist.</div>
               ) : undefined}
               <div className="bns">
                 <div className="btn clear" onClick={() => HandleClear()}>
@@ -311,7 +333,7 @@ const Room = () => {
                           </div>
                           <div
                             className="upd"
-                            onClick={() => HandleUpdate(data._id)}
+                            onClick={() => HandleUpdate(data._id, data.room)}
                           >
                             <FaEdit color="white" size={17} />
                             <span>Update</span>
