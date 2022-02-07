@@ -115,6 +115,7 @@ const SchoolYear = () => {
                 value={isUpdate}
                 onChange={(data) => setUpdate(data.target.value)}
               >
+                <option>Select</option>
                 <option value="First Semester">First Semester</option>
                 <option value="Inter Semester">Inter Semester</option>
                 <option value="Second Semester">Second Semester</option>
