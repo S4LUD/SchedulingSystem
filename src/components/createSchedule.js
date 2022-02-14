@@ -7,6 +7,7 @@ import Image from "../assets/school-logo.png";
 
 const CreateSchedule = () => {
   document.title = "Schedule";
+  const [isSchedule, setSchedule] = useState([]);
   const [isRoom, setRoom] = useState([]);
   const [isSection, setSection] = useState([]);
   const [isSubject, setSubject] = useState([]);
@@ -14,7 +15,6 @@ const CreateSchedule = () => {
   const [isCourse, setCourse] = useState([]);
   const [isDisabled, setDisabled] = useState(true);
   const [isBotDisabled, setBotDisabled] = useState(true);
-  const [isSchedule, setSchedule] = useState([]);
   const [isVisible, setVisible] = useState(false);
   const [isLoading, setLoading] = useState(false);
 
@@ -66,7 +66,7 @@ const CreateSchedule = () => {
           sessionStorage.setItem("ss-crdntl-vld", "true");
           setVerify(false);
         });
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate]);
@@ -237,6 +237,44 @@ const CreateSchedule = () => {
     setLoading(true);
 
     const raw = JSON.stringify({
+      dayIndex:
+        isSelectedDay === "Monday"
+          ? 1
+          : isSelectedDay === "Tuesday"
+          ? 2
+          : isSelectedDay === "Wednesday"
+          ? 3
+          : isSelectedDay === "Thursday"
+          ? 4
+          : isSelectedDay === "Friday"
+          ? 5
+          : isSelectedDay === "Saturday"
+          ? 6
+          : isSelectedDay === "Sunday"
+          ? 7
+          : undefined,
+      timeslotIndex:
+        isSelectedTimeslot === "7:00 - 8:00"
+          ? 1
+          : isSelectedTimeslot === "8:00 - 9:00"
+          ? 2
+          : isSelectedTimeslot === "9:00 - 10:00"
+          ? 3
+          : isSelectedTimeslot === "10:00 - 11:00"
+          ? 4
+          : isSelectedTimeslot === "11:00 - 12:00"
+          ? 5
+          : isSelectedTimeslot === "12:00 - 1:00"
+          ? 6
+          : isSelectedTimeslot === "1:00 - 2:00"
+          ? 7
+          : isSelectedTimeslot === "2:00 - 3:00"
+          ? 8
+          : isSelectedTimeslot === "3:00 - 4:00"
+          ? 9
+          : isSelectedTimeslot === "4:00 - 5:00"
+          ? 10
+          : undefined,
       course: isSelectedCourse,
       section: isSelectSection,
       room: isSelectedRoom,
@@ -502,7 +540,7 @@ const CreateSchedule = () => {
                         <option>Select</option>
                         {isSubject.map((data) => {
                           return (
-                            <option key={data._id} value={data.subject}>
+                            <option key={data._id} value={data.s_code}>
                               {data.subject}
                             </option>
                           );
@@ -555,7 +593,7 @@ const CreateSchedule = () => {
           <div className="right-con">
             <div className="sched-title-con">
               <div className="sched-title">Section</div>
-              <div className="sched-title">Subject</div>
+              <div className="sched-title">Subject Code</div>
               <div className="sched-title">Day</div>
               <div className="sched-title">Period</div>
               <div className="sched-title">Room</div>

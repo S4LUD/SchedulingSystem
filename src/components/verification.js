@@ -40,7 +40,7 @@ const Verification = () => {
             }
           });
       })();
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate, params]);

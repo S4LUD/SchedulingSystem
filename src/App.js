@@ -13,6 +13,7 @@ import ViewClassSchedule from "./components/ViewClassSchedule";
 import ViewInstructorSchedule from "./components/ViewInstructorSchedule";
 import SchoolYear from "./components/SchoolYear";
 import Verification from "./components/verification";
+import Settings from "./components/settings";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="credential" exact element={<Verification />}>
             <Route path=":auth" exact element={<Verification />} />
           </Route>
+          <Route path="settings" exact element={<Settings />} />
           <Route path="login" exact element={<Login />} />
           <Route path="dashboard" exact element={<Dashboard />} />
           <Route path="schedule" exact element={<CreateSchedule />} />

@@ -3,6 +3,7 @@ import Navigation from "./navigation";
 import Logo from "../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "../assets/school-logo.png";
+import Dept from "../assets/Dept-Logo.png";
 import Api from "./api.json";
 
 const Homepage = () => {
@@ -35,7 +36,7 @@ const Homepage = () => {
           sessionStorage.setItem("ss-crdntl-vld", "false");
           setVerify(false);
         });
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate]);
@@ -65,12 +66,38 @@ const Homepage = () => {
             </Link>
           </div>
         </div>
-        <div className="about">
-          <div className="title">ABOUT THIS SITE</div>
-          <div className="desc">
-            coeshed helps the student and instructors of the college department
-            in Laguna State Polytechnic University to look upon their given
-            schedules, it also helps the department to make class schedules.
+      </div>
+      <div className="about-con">
+        <img src={Dept} alt="Logo" />
+        <div className="detail">
+          <div className="det">
+            Coesched helps the admin, instructors and students of College of
+            Engineering at Laguna State Polytechnic University- San Pablo City
+            Campus to create, edit, and view their class schedules.
+          </div>
+          <div className="det">
+            Coesched enables the instructors and students of College of
+            Engineering at Laguna State Polytechnic University- San Pablo City
+            Campus to create, edit, and view their class schedules.
+          </div>
+          <div className="det">
+            Coesched is a web-based class scheduling system that enables the
+            admin to create a class schedule and helps the instructors and
+            students to view and print the schedules of College of Engineering
+            at Laguna State Polytechnic University- San Pablo City Campus.
+          </div>
+        </div>
+        <div className="footer">
+          <div className="schl-nm">
+            COESHED: Web-based Class Scheduling System for the College of
+            Engineering at Laguna State Polytechnic University - San Pablo City
+            Campus
+          </div>
+          <div className="stdnt-nm">
+            <div className="stdnt">De Gusman, Nikko</div>
+            <div className="stdnt">Olivia, Shyril</div>
+            <div className="stdnt">Pandanan, Jhansept Kylo</div>
+            <div className="stdnt">Taa, Jessica</div>
           </div>
         </div>
       </div>

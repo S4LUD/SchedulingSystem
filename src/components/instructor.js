@@ -19,6 +19,7 @@ const Instructor = () => {
   const [isError, setError] = useState(false);
   const [isErroru, setErroru] = useState(false);
   const pageNumbers = [];
+  const [isExist, setExist] = useState(false);
 
   const UpdateData = async () => {
     const GetRequest = {
@@ -261,18 +262,18 @@ const Instructor = () => {
     };
 
     await fetch(API, PostRequest)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Could not fetch the data");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((result) => {
         if (result.message === "OK") {
           UpdateData();
           setRoom("");
+          setExist(false);
           setLoading(false);
+          return;
         }
+        setExist(true);
+        setRoom("");
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
   };
@@ -293,6 +294,9 @@ const Instructor = () => {
                 value={isRoom}
                 onChange={(data) => setRoom(data.target.value)}
               />
+              {isExist ? (
+                <div className="error">Intructor is already listed.</div>
+              ) : undefined}
               {isError ? (
                 <div className="error">
                   Don't leave this blank before saving

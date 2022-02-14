@@ -28,6 +28,7 @@ const Section = () => {
   const pageNumbers = [];
   const [isSec, setSec] = useState("");
   const [isSecN, setSecN] = useState("");
+  const [isExist, setExist] = useState(false);
 
   const UpdateData = async () => {
     const GetRequest = {
@@ -292,18 +293,18 @@ const Section = () => {
     };
 
     await fetch(API, PostRequest)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Could not fetch the data");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((result) => {
         if (result.message === "OK") {
           UpdateData();
           setRoom("");
+          setExist(false);
           setLoading(false);
+          return;
         }
+        setExist(true);
+        setRoom("");
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
   };
@@ -402,6 +403,9 @@ const Section = () => {
                   value={isRoom}
                   onChange={(data) => setRoom(data.target.value)}
                 />
+                {isExist ? (
+                  <div className="error">Section is already listed.</div>
+                ) : undefined}
                 {isError ? (
                   <div className="error">
                     Don't leave this blank before saving

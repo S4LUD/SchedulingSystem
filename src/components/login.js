@@ -41,7 +41,7 @@ const Login = () => {
           sessionStorage.setItem("ss-crdntl-vld", "false");
           setVerify(false);
         });
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate]);

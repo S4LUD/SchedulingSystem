@@ -39,7 +39,7 @@ const DataManagement = () => {
           sessionStorage.setItem("ss-crdntl-vld", "true");
           setVerify(false);
         });
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate]);

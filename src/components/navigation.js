@@ -16,8 +16,17 @@ const Navigation = () => {
             </>
           ) : location.pathname === "/dashboard" ? (
             <>
+              <Link to="/settings">
+                <div className="nav-btns nav-cd">Settings</div>
+              </Link>
               <Link to="/credential/logout">
                 <div className="nav-btns nav-cd">Log Out</div>
+              </Link>
+            </>
+          ) : location.pathname === "/settings" ? (
+            <>
+              <Link to="/dashboard">
+                <div className="nav-btns nav-cd">Back</div>
               </Link>
             </>
           ) : location.pathname === "/login" ? (
@@ -37,9 +46,6 @@ const Navigation = () => {
               <Link to="/schedule">
                 <div className="nav-btns nav-cd hilight">Schedule</div>
               </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
-              </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
               </Link>
@@ -54,9 +60,6 @@ const Navigation = () => {
               </Link>
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
-              </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
               </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
@@ -73,9 +76,6 @@ const Navigation = () => {
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
               </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
-              </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
               </Link>
@@ -90,9 +90,6 @@ const Navigation = () => {
               </Link>
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
-              </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
               </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
@@ -109,9 +106,6 @@ const Navigation = () => {
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
               </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
-              </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
               </Link>
@@ -126,9 +120,6 @@ const Navigation = () => {
               </Link>
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
-              </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
               </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>
@@ -178,9 +169,6 @@ const Navigation = () => {
               </Link>
               <Link to="/schedule">
                 <div className="nav-btns nav-cd">Schedule</div>
-              </Link>
-              <Link to="/class/schedule">
-                <div className="nav-btns nav-cd">View Class Schedules</div>
               </Link>
               <Link to="/class/instructor">
                 <div className="nav-btns nav-cd">View Intructor Schedules</div>

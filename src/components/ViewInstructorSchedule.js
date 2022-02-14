@@ -18,10 +18,12 @@ const ViewInstructorSchedule = () => {
 
   const SearchSectionAPI = `${Api.api}/api/search-by-instructor/`;
   const SectionAPI = `${Api.api}/api/instructor/`;
+  const InstructorAPI = `${Api.api}/api/instructor/`;
   const SemesterAPI = `${Api.api}/api/semester`;
   const VerifyAPI = `${Api.api}/api/verify`;
   const navigate = useNavigate();
   const [isVerify, setVerify] = useState(false);
+  const [isInstructor, setInstructor] = useState([]);
 
   useLayoutEffect(() => {
     setVerify(true);
@@ -46,7 +48,7 @@ const ViewInstructorSchedule = () => {
           }
           setVerify(false);
         });
-    }, 1000);
+    }, 100);
 
     return () => AbortCntrlr.abort();
   }, [VerifyAPI, navigate]);
@@ -989,51 +991,72 @@ const ViewInstructorSchedule = () => {
             <td>7:00 - 8:00</td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[0].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1041,51 +1064,72 @@ const ViewInstructorSchedule = () => {
             <td>8:00 - 9:00</td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[1].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1093,51 +1137,72 @@ const ViewInstructorSchedule = () => {
             <td>9:00 - 10:00</td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[2].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1145,51 +1210,72 @@ const ViewInstructorSchedule = () => {
             <td>10:00 - 11:00</td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[3].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1197,51 +1283,72 @@ const ViewInstructorSchedule = () => {
             <td>11:00 - 12:00</td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[4].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1249,51 +1356,72 @@ const ViewInstructorSchedule = () => {
             <td>12:00 - 1:00</td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[5].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1301,51 +1429,72 @@ const ViewInstructorSchedule = () => {
             <td>1:00 - 2:00</td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[6].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1353,51 +1502,72 @@ const ViewInstructorSchedule = () => {
             <td>2:00 - 3:00</td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[7].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1405,51 +1575,72 @@ const ViewInstructorSchedule = () => {
             <td>3:00 - 4:00</td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[8].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1457,51 +1648,72 @@ const ViewInstructorSchedule = () => {
             <td>4:00 - 5:00</td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Monday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Monday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Tuesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Tuesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Wednesday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Wednesday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Thursday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Thursday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Friday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Friday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Saturday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Saturday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
             <td>
               {isObject[9].map((data) => {
-                return data.day === "Sunday"
-                  ? `${data.room} - ${data.section} - ${data.subject} - ${data.instructor}`
-                  : undefined;
+                return data.day === "Sunday" ? (
+                  <div className="custom-tbl">
+                    <div className="tbl-dt">{data.room}</div>
+                    <div className="tbl-dt">{data.section}</div>
+                  </div>
+                ) : undefined;
               })}
             </td>
           </tr>
@@ -1513,7 +1725,10 @@ const ViewInstructorSchedule = () => {
   useEffect(() => {
     const GetSectionRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -1546,7 +1761,10 @@ const ViewInstructorSchedule = () => {
     if (isID === "") return;
     const GetScheduleRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -1558,6 +1776,20 @@ const ViewInstructorSchedule = () => {
         return response.json();
       })
       .then((result) => setSchedule(result))
+      .catch((error) => console.log("error", error));
+
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
+      redirect: "follow",
+    };
+
+    await fetch(InstructorAPI + isSelectSection, requestOptions)
+      .then((response) => response.json())
+      .then((result) => setInstructor(result))
       .catch((error) => console.log("error", error));
   };
 
@@ -1645,7 +1877,7 @@ const ViewInstructorSchedule = () => {
                   </span>
                   <span className="t3">Province of Laguna</span>
                   <span className="t4">College of Engineering</span>
-                  <span className="t5">CLASS SCHEDULE</span>
+                  <span className="t5">INSTRUCTOR SCHEDULE</span>
                   {isSemester.map((data) => {
                     return (
                       <span
@@ -1656,6 +1888,13 @@ const ViewInstructorSchedule = () => {
                   })}
                 </div>
               </div>
+              <div className="simple-details">
+                <span className="sim-det">{`Instructor: ${isInstructor.map(
+                  (data) => {
+                    return data.instructor;
+                  }
+                )}`}</span>
+              </div>
               <HandleTable />
               <div className="signature-con">
                 <span className="prepared">Prepared by:</span>
@@ -1665,7 +1904,7 @@ const ViewInstructorSchedule = () => {
               </div>
             </div>
           ) : (
-            <div className="no-datas">NO DATA</div>
+            <div className="no-datas">NO SCHEDULE</div>
           )}
         </div>
       </div>

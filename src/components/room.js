@@ -267,7 +267,9 @@ const Room = () => {
           setRoom("");
           setLoading(false);
           setExist(false);
+          return;
         }
+
         setExist(true);
         setRoom("");
         setLoading(false);
@@ -297,7 +299,7 @@ const Room = () => {
                 </div>
               ) : undefined}
               {isExist ? (
-                <div className="error">Room is already exist.</div>
+                <div className="error">Room is already listed.</div>
               ) : undefined}
               <div className="bns">
                 <div className="btn clear" onClick={() => HandleClear()}>

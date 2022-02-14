@@ -16,6 +16,144 @@ body {
   scroll-behavior: smooth;
 }
 
+.about-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 500px;
+  }
+  .detail {
+    max-width: 700px;
+    text-align: justify;
+    display: grid;
+    gap: 10px;
+    .det {
+      font-size: 20px;
+      background: #3c5834;
+      padding: 20px;
+      color: #ffffff;
+      border-radius: 5px;
+    }
+  }
+  .footer {
+    margin-top: 50px;
+    background: #3c5834;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    .schl-nm {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .stdnt-nm {
+      display: flex;
+      .stdnt {
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 18px;
+        background: #2d4227;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.back {
+  z-index: 999999;
+  background: rgba(38, 38, 38, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.user-modal-con {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .user-modal-wrapper {
+    z-index: 999999;
+    background: #ffffff;
+    padding: 30px;
+    width: 300px;
+    border-radius: 5px;
+    .titled {
+      font-size: 22px;
+    }
+    input {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+    .btn {
+      border-radius: 5px;
+      cursor: pointer;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      background: #fa3636;
+      &:hover {
+        background: #c72b2b;
+      }
+    }
+  }
+}
+
+.settings-con {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .set-wrap {
+    background: white;
+    width: 400px;
+    .title {
+      padding: 30px;
+      font-size: 24px;
+    }
+    .btns {
+      padding: 0 30px 30px 30px;
+      .pass {
+        background: #fa3636;
+        &:hover {
+          background: #c72b2b;
+        }
+      }
+      .name {
+        background: #52abfa;
+        margin-bottom: 5px;
+        &:hover {
+          background: #3789d1;
+        }
+      }
+      .btn {
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}
+
 .verified {
   position: absolute;
   top: 0;
@@ -174,6 +312,7 @@ body {
           .t3,
           .t6 {
             font-size: 14px;
+            text-align: center;
           }
           .t2,
           .t4,
@@ -374,6 +513,17 @@ body {
   user-select: none;
 }
 
+.errors {
+  font-size: 12px;
+  padding: 5px;
+  background: #fa3636;
+  color: white;
+  font-weight: bold;
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .error {
   font-size: 12px;
   padding: 5px;
@@ -555,6 +705,37 @@ body {
       border: 1px solid #dee1e6;
       border-radius: 5px;
       height: max-content;
+      .bns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+        color: white;
+        padding: 10px;
+        .btn {
+          cursor: pointer;
+          padding: 10px;
+          text-align: center;
+          border-radius: 5px;
+        }
+        .clear {
+          border: 1px solid #dee1e6;
+          color: black;
+          background: #f2f0f2;
+          transition: background 100ms ease-in-out;
+          &:hover {
+            background: #d4d7db;
+          }
+        }
+        .add {
+          background: #52abfa;
+          transition: background 100ms ease-in-out;
+          &:hover {
+            background: #3789d1;
+          }
+        }
+      }
       .top-wrap {
         padding: 10px;
         .selection {
@@ -606,6 +787,15 @@ body {
         padding: 10px;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
+      }
+      .t-itled {
+        font-size: 18px;
+        background: #ffffff;
+        color: black;
+        border-top: 1px solid #c5c8cc;
+        border-bottom: 1px solid #c5c8cc;
+        user-select: none;
+        padding: 10px;
       }
       .wrapper {
         padding: 10px;
@@ -660,6 +850,19 @@ body {
       height: max-content;
       background: white;
       border: 1px solid #dee1e6;
+      .titled {
+        background: #ffffff;
+        color: black;
+        border-bottom: 1px solid #c5c8cc;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.1fr;
+        font-size: 18px;
+        user-select: none;
+        padding: 10px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        gap: 1px;
+      }
       .title {
         background: #ffffff;
         color: black;
@@ -742,6 +945,64 @@ body {
         .table-con-data {
           display: grid;
           grid-template-columns: 1fr;
+          .table-datas {
+            display: grid;
+            grid-template-columns: 0.2fr 1fr 0.1fr;
+            padding: 5px;
+            .room-code {
+              padding-left: 5px;
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+            }
+            .room-name {
+              padding-left: 5px;
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+            }
+            .action {
+              display: flex;
+              align-items: center;
+              color: white;
+              cursor: pointer;
+              .del {
+                span {
+                  padding-left: 10px;
+                  font-size: 16px;
+                }
+                margin-right: 10px;
+                background: #fa3636;
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                  background: #c72b2b;
+                }
+              }
+              .upd {
+                span {
+                  padding-left: 10px;
+                  font-size: 16px;
+                }
+                margin-right: 10px;
+                background: #52abfa;
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                  background: #3789d1;
+                }
+              }
+            }
+            &:nth-child(even) {
+              background: #faf9fa;
+            }
+          }
           .table-data {
             .room-name {
               padding-left: 5px;
@@ -1097,11 +1358,23 @@ body {
       border-top-right-radius: 5px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        table-layout: fixed;
+        th,
+        td {
+          border: 1px solid #dddddd;
+          text-align: center;
+          padding: 10px 10px;
+        }
+      }
       .sched-title-con {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         display: grid;
-        grid-template-columns: 0.6fr 1fr 0.7fr 0.8fr 0.5fr 1fr 0.4fr;
+        grid-template-columns: 0.45fr 0.61fr 0.6fr 0.7fr 0.5fr 1fr 0.6fr;
         font-size: 18px;
         padding: 10px;
         border-bottom: 1px solid #dee1e6;
@@ -1114,7 +1387,7 @@ body {
           padding: 10px;
           display: grid;
           font-size: 16px;
-          grid-template-columns: 0.6fr 1fr 0.7fr 0.8fr 0.5fr 1fr 0.4fr;
+          grid-template-columns: 0.45fr 0.61fr 0.6fr 0.7fr 0.5fr 1fr 0.6fr;
           align-items: center;
           .sched-data {
             .btn {
@@ -1520,42 +1793,6 @@ body {
     height: 450px;
     width: 400px;
     padding: 10px;
-  }
-}
-
-.footer {
-  background: #131313;
-  color: white;
-  padding: 100px;
-  .topinfo {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 200px;
-    margin-bottom: 50px;
-    .box {
-      .title {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      .link-btn {
-        cursor: pointer;
-        margin-top: 5px;
-      }
-    }
-  }
-  .bottominfo {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    .title {
-      font-size: 32px;
-    }
-    .socmed-links {
-      width: 225px;
-      display: flex;
-      justify-content: space-between;
-    }
   }
 }
 

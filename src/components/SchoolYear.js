@@ -14,7 +14,10 @@ const SchoolYear = () => {
   const UpdateData = async () => {
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -35,7 +38,10 @@ const SchoolYear = () => {
 
     const GetRequest = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       redirect: "follow",
     };
 
@@ -67,7 +73,10 @@ const SchoolYear = () => {
 
     const PostRequest = {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": sessionStorage.getItem("token"),
+      },
       body: raw,
       redirect: "follow",
     };
@@ -107,7 +116,7 @@ const SchoolYear = () => {
             <div className="con">
               <input
                 type="text"
-                placeholder="Input Year"
+                placeholder="20xx - 20xx"
                 value={isYear}
                 onChange={(data) => setYear(data.target.value)}
               />
