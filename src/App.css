@@ -1808,22 +1808,10 @@ body {
 .create-con .sched-con-wrap .left-con .bot-con .bot-wrap .btns {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   gap: 10px;
   margin-top: 10px;
-}
-
-.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .btns .clear {
-  border: 1px solid #dee1e6;
-  background: #f2f0f2;
-  -webkit-transition: background 100ms ease-in-out;
-  transition: background 100ms ease-in-out;
-  color: black;
-}
-
-.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .btns .clear:hover {
-  background: #d4d7db;
 }
 
 .create-con .sched-con-wrap .left-con .bot-con .bot-wrap .btns .save {
@@ -1908,6 +1896,57 @@ body {
       grid-template-columns: 1fr 1fr;
   gap: 10px;
   width: 100%;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search {
+  width: 100%;
+  position: relative;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search input {
+  outline: none;
+  height: 40px;
+  padding: 5px;
+  width: 158px;
+  border-radius: 5px;
+  border: 1px solid #7c7c7c;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search .searched {
+  position: absolute;
+  z-index: 999;
+  background: #ffffff;
+  border: 1px solid #7c7c7c;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1px;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search .searched .srch-dt {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search .searched .srch-dt:hover {
+  background: #a7a7a7;
+}
+
+.create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .search .icon {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .create-con .sched-con-wrap .left-con .bot-con .bot-wrap .inputs .selection .input-title {

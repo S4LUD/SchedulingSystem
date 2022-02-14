@@ -1233,18 +1233,9 @@ body {
           padding: 10px;
           .btns {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 10px;
             margin-top: 10px;
-            .clear {
-              border: 1px solid #dee1e6;
-              background: #f2f0f2;
-              transition: background 100ms ease-in-out;
-              color: black;
-              &:hover {
-                background: #d4d7db;
-              }
-            }
             .save {
               background: #52abfa;
               transition: background 100ms ease-in-out;
@@ -1309,6 +1300,45 @@ body {
             gap: 10px;
             width: 100%;
             .selection {
+              .search {
+                width: 100%;
+                position: relative;
+                input {
+                  outline: none;
+                  height: 40px;
+                  padding: 5px;
+                  width: 158px;
+                  border-radius: 5px;
+                  border: 1px solid #7c7c7c;
+                }
+                .searched {
+                  position: absolute;
+                  z-index: 999;
+                  background: #ffffff;
+                  border: 1px solid #7c7c7c;
+                  width: 100%;
+                  border-radius: 5px;
+                  margin-top: 1px;
+                  .srch-dt {
+                    padding: 10px 5px;
+                    cursor: pointer;
+                    &:hover {
+                      background: #a7a7a7;
+                    }
+                  }
+                }
+                .icon {
+                  cursor: pointer;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  height: 100%;
+                  width: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
               .input-title {
                 font-size: 16px;
                 margin-bottom: 5px;

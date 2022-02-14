@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import Navigation from "./navigation";
-import { FaTrashAlt, FaAngleDown } from "react-icons/fa";
+import { FaTrashAlt, FaAngleDown, FaTimes } from "react-icons/fa";
 import Api from "./api.json";
 import { useNavigate } from "react-router-dom";
 import Image from "../assets/school-logo.png";
@@ -31,6 +31,8 @@ const CreateSchedule = () => {
   const [isSelectedCourse, setSelectedCourse] = useState("");
   const [isValidate, setValidate] = useState(false);
   const [isVerify, setVerify] = useState(false);
+  const [isSearch, setSearch] = useState("");
+  const [isFiltered, setFiltered] = useState([]);
 
   const RoomAPI = `${Api.api}/api/room`;
   const SubjectAPI = `${Api.api}/api/subject`;
@@ -369,6 +371,33 @@ const CreateSchedule = () => {
       .catch((error) => console.log("error", error));
   };
 
+  const HandleSearch = (search) => {
+    setSearch(search);
+    const Filtered = isSubject.filter((value) => {
+      return value.subject.toLowerCase().includes(isSearch.toLocaleLowerCase());
+    });
+
+    if (search === "") {
+      setFiltered([]);
+      setSearch("");
+      return;
+    }
+
+    setFiltered(Filtered);
+  };
+
+  const HandleClear = (value) => {
+    setSearch(value.subject);
+    setSelectedSubject(value.s_code);
+    setFiltered([]);
+  };
+
+  const Clear = () => {
+    setSearch("");
+    setSelectedSubject("");
+    setFiltered([]);
+  };
+
   return (
     <>
       <Navigation />
@@ -530,25 +559,33 @@ const CreateSchedule = () => {
                   </div>
                   <div className="selection">
                     <div className="input-title">Subject</div>
-                    <div className="custom-select">
-                      <select
-                        value={isSelectedSubject}
-                        onChange={(data) =>
-                          setSelectedSubject(data.target.value)
-                        }
-                      >
-                        <option>Select</option>
-                        {isSubject.map((data) => {
-                          return (
-                            <option key={data._id} value={data.s_code}>
-                              {data.subject}
-                            </option>
-                          );
-                        })}
-                      </select>
-                      <div className="custom-icon">
-                        <FaAngleDown color="#EDEDED" />
-                      </div>
+                    <div className="search">
+                      <input
+                        type="text"
+                        placeholder="Search Subject"
+                        value={isSearch}
+                        onChange={(data) => HandleSearch(data.target.value)}
+                      />
+                      {isSearch !== "" ? (
+                        <div className="icon" onClick={() => Clear()}>
+                          <FaTimes color="#7c7c7c" size={18} />
+                        </div>
+                      ) : undefined}
+                      {isFiltered.length !== 0 ? (
+                        <div className="searched">
+                          {isFiltered.slice(0, 3).map((value, key) => {
+                            return (
+                              <div
+                                key={key}
+                                className="srch-dt"
+                                onClick={() => HandleClear(value)}
+                              >
+                                {value.subject}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : undefined}
                     </div>
                   </div>
                 </div>
@@ -579,7 +616,6 @@ const CreateSchedule = () => {
                   <div className="error">Don't leave the field blank.</div>
                 ) : undefined}
                 <div className="btns">
-                  <div className="btn clear">Clear</div>
                   <div
                     className="btn save"
                     onClick={() => HandleSaveSchedule()}
