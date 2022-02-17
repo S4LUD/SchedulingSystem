@@ -91,7 +91,7 @@ const Settings = () => {
       redirect: "follow",
     };
 
-    await fetch("http://localhost:5719/api/verify", requestOptions)
+    await fetch(VerifyAPI, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.acknowledged) {
