@@ -303,6 +303,7 @@ const ViewClassSchedule = () => {
     Monday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -310,6 +311,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -317,6 +319,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -324,6 +327,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -331,6 +335,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -338,6 +343,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -345,6 +351,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -352,6 +359,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -359,6 +367,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -366,6 +375,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -377,6 +387,7 @@ const ViewClassSchedule = () => {
     Tuesday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -384,6 +395,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -391,6 +403,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -398,6 +411,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -405,6 +419,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -412,6 +427,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -419,6 +435,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -426,6 +443,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -433,6 +451,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -440,6 +459,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -451,6 +471,7 @@ const ViewClassSchedule = () => {
     Wednesday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -458,6 +479,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -465,6 +487,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -472,6 +495,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -479,6 +503,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -486,6 +511,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -493,6 +519,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -500,6 +527,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -507,6 +535,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -514,6 +543,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -525,6 +555,7 @@ const ViewClassSchedule = () => {
     Thursday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -532,6 +563,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -539,6 +571,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -546,6 +579,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -553,6 +587,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -560,6 +595,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -567,6 +603,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -574,6 +611,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -581,6 +619,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -588,6 +627,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -599,6 +639,7 @@ const ViewClassSchedule = () => {
     Friday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -606,6 +647,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -613,6 +655,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -620,6 +663,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -627,6 +671,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -634,6 +679,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -641,6 +687,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -648,6 +695,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -655,6 +703,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -662,6 +711,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -673,6 +723,7 @@ const ViewClassSchedule = () => {
     Saturday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -680,6 +731,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -687,6 +739,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -694,6 +747,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -701,6 +755,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -708,6 +763,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -715,6 +771,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -722,6 +779,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -729,6 +787,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -736,6 +795,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -747,6 +807,7 @@ const ViewClassSchedule = () => {
     Sunday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -754,6 +815,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -761,6 +823,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -768,6 +831,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -775,6 +839,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -782,6 +847,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -789,6 +855,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -796,6 +863,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -803,6 +871,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -810,6 +879,7 @@ const ViewClassSchedule = () => {
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
@@ -858,6 +928,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -868,6 +939,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -878,6 +950,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -888,6 +961,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -898,6 +972,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -908,6 +983,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -918,6 +994,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -931,6 +1008,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -941,6 +1019,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -951,6 +1030,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -961,6 +1041,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -971,6 +1052,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -981,6 +1063,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -991,6 +1074,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1004,6 +1088,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1014,6 +1099,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1024,6 +1110,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1034,6 +1121,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1044,6 +1132,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1054,6 +1143,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1064,6 +1154,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1077,6 +1168,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1087,6 +1179,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1097,6 +1190,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1107,6 +1201,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1117,6 +1212,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1127,6 +1223,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1137,6 +1234,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1150,6 +1248,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1160,6 +1259,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1170,6 +1270,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1180,6 +1281,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1190,6 +1292,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1200,6 +1303,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1210,6 +1314,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1223,6 +1328,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1233,6 +1339,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1243,6 +1350,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1253,6 +1361,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1263,6 +1372,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1273,6 +1383,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1283,6 +1394,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1296,6 +1408,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1306,6 +1419,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1316,6 +1430,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1326,6 +1441,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1336,6 +1452,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1346,6 +1463,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1356,6 +1474,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1369,6 +1488,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1379,6 +1499,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1389,6 +1510,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1399,6 +1521,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1409,6 +1532,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1419,6 +1543,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1429,6 +1554,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1442,6 +1568,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1452,6 +1579,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1462,6 +1590,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1472,6 +1601,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1482,6 +1612,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1492,6 +1623,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1502,6 +1634,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1515,6 +1648,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1525,6 +1659,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1535,6 +1670,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1545,6 +1681,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1555,6 +1692,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1565,6 +1703,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1575,6 +1714,7 @@ const ViewClassSchedule = () => {
                   <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
                     <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}

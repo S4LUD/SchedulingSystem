@@ -302,93 +302,83 @@ const ViewInstructorSchedule = () => {
     Monday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -396,93 +386,83 @@ const ViewInstructorSchedule = () => {
     Tuesday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -490,93 +470,83 @@ const ViewInstructorSchedule = () => {
     Wednesday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -584,93 +554,83 @@ const ViewInstructorSchedule = () => {
     Thursday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -678,93 +638,83 @@ const ViewInstructorSchedule = () => {
     Friday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -772,93 +722,83 @@ const ViewInstructorSchedule = () => {
     Saturday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -866,93 +806,83 @@ const ViewInstructorSchedule = () => {
     Sunday.map((data) => {
       return data.timeslot === "7:00 - 8:00"
         ? FinalRawTimeSlot1.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "8:00 - 9:00"
         ? FinalRawTimeSlot2.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "9:00 - 10:00"
         ? FinalRawTimeSlot3.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "10:00 - 11:00"
         ? FinalRawTimeSlot4.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "11:00 - 12:00"
         ? FinalRawTimeSlot5.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "12:00 - 1:00"
         ? FinalRawTimeSlot6.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "1:00 - 2:00"
         ? FinalRawTimeSlot7.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "2:00 - 3:00"
         ? FinalRawTimeSlot8.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "3:00 - 4:00"
         ? FinalRawTimeSlot9.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : data.timeslot === "4:00 - 5:00"
         ? FinalRawTimeSlot10.push({
+            subject: data.subject,
             timeslot: data.timeslot,
             room: data.room,
             instructor: data.instructor,
             day: data.day,
-            section: data.section,
-            subject: data.subject,
           })
         : undefined;
     });
@@ -976,7 +906,7 @@ const ViewInstructorSchedule = () => {
 
     return (
       <table>
-        <tbody>
+        <thead>
           <tr>
             <th>PERIOD</th>
             <th>MONDAY</th>
@@ -987,14 +917,17 @@ const ViewInstructorSchedule = () => {
             <th>SATURDAY</th>
             <th>SUNDAY</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>7:00 - 8:00</td>
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1002,9 +935,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1012,9 +946,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1022,9 +957,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1032,9 +968,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1042,9 +979,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1052,9 +990,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[0].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1065,9 +1004,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1075,9 +1015,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1085,9 +1026,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1095,9 +1037,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1105,9 +1048,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1115,9 +1059,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1125,9 +1070,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[1].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1138,9 +1084,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1148,9 +1095,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1158,9 +1106,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1168,9 +1117,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1178,9 +1128,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1188,9 +1139,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1198,9 +1150,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[2].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1211,9 +1164,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1221,9 +1175,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1231,9 +1186,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1241,9 +1197,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1251,9 +1208,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1261,9 +1219,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1271,9 +1230,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[3].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1284,9 +1244,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1294,9 +1255,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1304,9 +1266,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1314,9 +1277,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1324,9 +1288,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1334,9 +1299,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1344,9 +1310,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[4].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1357,9 +1324,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1367,9 +1335,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1377,9 +1346,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1387,9 +1357,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1397,9 +1368,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1407,9 +1379,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1417,9 +1390,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[5].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1430,9 +1404,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1440,9 +1415,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1450,9 +1426,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1460,9 +1437,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1470,9 +1448,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1480,9 +1459,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1490,9 +1470,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[6].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1503,9 +1484,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1513,9 +1495,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1523,9 +1506,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1533,9 +1517,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1543,9 +1528,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1553,9 +1539,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1563,9 +1550,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[7].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1576,9 +1564,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1586,9 +1575,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1596,9 +1586,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1606,9 +1597,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1616,9 +1608,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1626,9 +1619,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1636,9 +1630,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[8].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1649,9 +1644,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Monday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1659,9 +1655,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Tuesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1669,9 +1666,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Wednesday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1679,9 +1677,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Thursday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1689,9 +1688,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Friday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1699,9 +1699,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Saturday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}
@@ -1709,9 +1710,10 @@ const ViewInstructorSchedule = () => {
             <td>
               {isObject[9].map((data) => {
                 return data.day === "Sunday" ? (
-                  <div className="custom-tbl">
+                  <div key={data._id} className="custom-tbl">
                     <div className="tbl-dt">{data.room}</div>
-                    <div className="tbl-dt">{data.section}</div>
+                    <div className="tbl-dt">{data.instructor}</div>
+                    <div className="tbl-dt">{data.subject}</div>
                   </div>
                 ) : undefined;
               })}

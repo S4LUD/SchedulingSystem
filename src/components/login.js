@@ -137,14 +137,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="about">
-          <div className="title">ABOUT THIS SITE</div>
-          <div className="desc">
-            coeshed helps the student and instructors of the college department
-            in Laguna State Polytechnic University to look upon their given
-            schedules, it also helps the department to make class schedules.
-          </div>
-        </div>
       </div>
     </>
   );

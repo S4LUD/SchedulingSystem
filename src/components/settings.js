@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navigation from "./navigation";
+import Api from "./api.json";
 
 const Settings = () => {
   document.title = "Settings";
@@ -7,6 +8,8 @@ const Settings = () => {
   const [isUpdateUser, setUpdateUser] = useState(false);
   const [isError, setError] = useState(false);
   const [isInvalid, setInvalid] = useState(false);
+
+  const VerifyAPI = `${Api.api}/api/verify`;
 
   const HandleUpdate = async (data) => {
     setError(false);
@@ -27,7 +30,7 @@ const Settings = () => {
       redirect: "follow",
     };
 
-    await fetch("http://localhost:5719/api/verify", requestOptions)
+    await fetch(VerifyAPI, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.acknowledged) {
