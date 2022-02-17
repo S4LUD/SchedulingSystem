@@ -26,14 +26,12 @@ body {
   }
   .detail {
     max-width: 700px;
-    text-align: justify;
+    text-align: center;
     display: grid;
     gap: 10px;
     .det {
       font-size: 20px;
-      background: #3c5834;
       padding: 20px;
-      color: #ffffff;
       border-radius: 5px;
     }
   }
@@ -1468,21 +1466,6 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  .about {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 0 0 50px 50px;
-    width: 550px;
-    word-break: keep-all;
-    .title {
-      font-weight: bold;
-      font-size: 15px;
-    }
-    .desc {
-      font-size: 13px;
-    }
-  }
   .info {
     display: flex;
     flex-direction: column;
@@ -1599,21 +1582,6 @@ body {
         padding: 10px;
         font-size: 14px;
       }
-    }
-  }
-  .about {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 0 0 50px 50px;
-    width: 550px;
-    word-break: keep-all;
-    .title {
-      font-weight: bold;
-      font-size: 15px;
-    }
-    .desc {
-      font-size: 13px;
     }
   }
   .left-info {

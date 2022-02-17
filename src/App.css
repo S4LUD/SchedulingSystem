@@ -39,7 +39,7 @@ body {
 
 .about-con .detail {
   max-width: 700px;
-  text-align: justify;
+  text-align: center;
   display: -ms-grid;
   display: grid;
   gap: 10px;
@@ -47,9 +47,7 @@ body {
 
 .about-con .detail .det {
   font-size: 20px;
-  background: #3c5834;
   padding: 20px;
-  color: #ffffff;
   border-radius: 5px;
 }
 
@@ -2124,24 +2122,6 @@ body {
   position: relative;
 }
 
-.dash-con .about {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0 0 50px 50px;
-  width: 550px;
-  word-break: keep-all;
-}
-
-.dash-con .about .title {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.dash-con .about .desc {
-  font-size: 13px;
-}
-
 .dash-con .info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2329,24 +2309,6 @@ body {
   margin-bottom: 15px;
   padding: 10px;
   font-size: 14px;
-}
-
-.login-con .about {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0 0 50px 50px;
-  width: 550px;
-  word-break: keep-all;
-}
-
-.login-con .about .title {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.login-con .about .desc {
-  font-size: 13px;
 }
 
 .login-con .left-info {
