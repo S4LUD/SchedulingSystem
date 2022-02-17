@@ -84,7 +84,7 @@ const Homepage = () => {
             Campus
           </div>
           <div className="stdnt-nm">
-            <div className="stdnt">De Gusman, Nikko</div>
+            <div className="stdnt">De Guzman, Nikko</div>
             <div className="stdnt">Olivia, Shyril</div>
             <div className="stdnt">Pandanan, Jhansept Kylo</div>
             <div className="stdnt">Taa, Jessica</div>
